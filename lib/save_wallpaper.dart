@@ -45,6 +45,3 @@ Future<File?> getSavedWallpaper({String name = 'wallpaper'}) async {
   return await file.exists() ? file : null;
 }
 
-// usage
-// final bytes = await renderWallpaper(accentColor, const Size(1080, 1920));
-// final file = await saveWallpaperToStorage(bytes, name: 'my_wallpaper');
