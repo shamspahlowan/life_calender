@@ -15,9 +15,21 @@ class WallpaperCanvas extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     // Background
+    //const Color(0xFF1C1C1E)
+    final rect = Offset.zero & size;
     canvas.drawRect(
       Offset.zero & size,
       Paint()..color = const Color(0xFF1C1C1E),
+    );
+    canvas.drawRect(
+      Offset.zero & size,
+      Paint()
+        ..shader = const RadialGradient(
+          center: Alignment.topLeft,
+          radius: 2,
+          colors: [Color.fromARGB(255, 50, 67, 90), Color(0x00000000)],
+          stops: [0.0, 1.0],
+        ).createShader(rect),
     );
 
     // Geometry
@@ -34,7 +46,7 @@ class WallpaperCanvas extends CustomPainter {
 
     // Paints
     final pastPaint = Paint()..color = const Color(0xFFFFFFFF);
-    final futurePaint = Paint()..color = const Color(0xFF3A3A3C);
+    final futurePaint = Paint()..color = const Color.fromARGB(255, 78, 78, 82);
     final currentDayPaint = Paint()..color = const Color(0xFFFF6E40);
 
     final elapsedDays = LookUp.elapsedDaysInYear();
@@ -60,40 +72,91 @@ class WallpaperCanvas extends CustomPainter {
     }
 
     // Draw text
-    final weeksElapsed = elapsedDays ~/ 7;
-    final weeksRemaining = (LookUp.totalDaysInYear() ~/ 7) - weeksElapsed;
+    // final weeksElapsed = elapsedDays ~/ 7;
+    // final weeksRemaining = (LookUp.totalDaysInYear() ~/ 7) - weeksElapsed;
+
+    //for day count and percent one
+    final daysRemains = LookUp.daysLeftInYear();
+    final daysPercent = LookUp.dayPercent();
+
+    //   final textPainter = TextPainter(
+    //     text: TextSpan(
+    //       text: '$weeksElapsed ',
+    //       style: TextStyle(
+    //         color: Colors.deepOrangeAccent,
+    //         fontSize: size.width * 0.035,
+    //         fontWeight: FontWeight.w600,
+    //       ),
+    //       children: [
+    //         TextSpan(
+    //           text: 'weeks passed • ',
+    //           style: TextStyle(
+    //             color: Colors.white70,
+    //             fontSize: size.width * 0.035,
+    //             fontWeight: FontWeight.w400,
+    //           ),
+    //         ),
+    //         TextSpan(
+    //           text: '$weeksRemaining ',
+    //           style: TextStyle(
+    //             color: Colors.deepOrangeAccent,
+    //             fontSize: size.width * 0.035,
+    //             fontWeight: FontWeight.w600,
+    //           ),
+    //         ),
+    //         TextSpan(
+    //           text: 'weeks left',
+    //           style: TextStyle(
+    //             color: Colors.white70,
+    //             fontSize: size.width * 0.035,
+    //             fontWeight: FontWeight.w400,
+    //           ),
+    //         ),
+    //       ],
+    //     ),
+    //     textDirection: TextDirection.ltr,
+    //   )..layout();
+
+    //   textPainter.paint(
+    //     canvas,
+    //     Offset(
+    //       (size.width - textPainter.width) / 2,
+    //       size.height * layout.textOffsetRatio,
+    //     ),
+    //   );
+    // }
 
     final textPainter = TextPainter(
       text: TextSpan(
-        text: '$weeksElapsed ',
+        text: '$daysRemains',
         style: TextStyle(
           color: Colors.deepOrangeAccent,
           fontSize: size.width * 0.035,
-          fontWeight: FontWeight.w600,
+          fontWeight: FontWeight.w700,
         ),
         children: [
           TextSpan(
-            text: 'weeks passed • ',
+            text: 'd left• ',
             style: TextStyle(
               color: Colors.white70,
               fontSize: size.width * 0.035,
-              fontWeight: FontWeight.w400,
+              fontWeight: FontWeight.w500,
             ),
           ),
           TextSpan(
-            text: '$weeksRemaining ',
+            text: '$daysPercent',
             style: TextStyle(
               color: Colors.deepOrangeAccent,
               fontSize: size.width * 0.035,
-              fontWeight: FontWeight.w600,
+              fontWeight: FontWeight.w700,
             ),
           ),
           TextSpan(
-            text: 'weeks left',
+            text: '%',
             style: TextStyle(
               color: Colors.white70,
               fontSize: size.width * 0.035,
-              fontWeight: FontWeight.w400,
+              fontWeight: FontWeight.w500,
             ),
           ),
         ],

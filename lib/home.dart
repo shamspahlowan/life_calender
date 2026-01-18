@@ -30,14 +30,33 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    final pixelRatio = MediaQuery.of(context).devicePixelRatio;
+    // final screenSize = MediaQuery.of(context).size;
+    final pixelRatio = MediaQuery.of(context).devicePixelRatio * 2.5;
     final aspectRatio =
         MediaQuery.of(context).size.width / MediaQuery.of(context).size.height;
     return Scaffold(
-      appBar: AppBar(title: Text("LIFE CALENDER")),
+      appBar: AppBar(
+        title: Text("LIFE CALENDER"),
+        titleTextStyle: TextStyle(
+          color: Colors.black,
+          fontSize: 30,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
       body: Column(
-        mainAxisAlignment: .center,
+        mainAxisAlignment: .start,
         children: [
+          Align(
+            alignment: AlignmentGeometry.topCenter,
+            child: Text(
+              "Visualize your progress & \n stay focused",
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
           Text(
             "Your days in a year",
             style: TextStyle(fontWeight: FontWeight.bold),
@@ -53,7 +72,9 @@ class _HomeState extends State<Home> {
                   child: CustomPaint(
                     painter: WallpaperCanvas(
                       accentColor: accentColor,
-                      layout: CalendarGridLayout(),
+                      layout: CalendarGridLayout.fromSize(
+                        MediaQuery.of(context).size,
+                      ),
                     ),
                   ),
                 ),
@@ -68,13 +89,11 @@ class _HomeState extends State<Home> {
           ElevatedButton(
             onPressed: () async {
               print(aspectRatio);
+              final size = MediaQuery.of(context).size;
               final bytes = await renderWallpaper(
                 accentColor,
-                CalendarGridLayout(),
-                Size(
-                  MediaQuery.of(context).size.width * pixelRatio,
-                  MediaQuery.of(context).size.height * pixelRatio,
-                ),
+                CalendarGridLayout.fromSize(size),
+                Size(size.width * pixelRatio, size.height * pixelRatio),
               );
               final image = await saveWallpaperToStorage(
                 bytes,

@@ -27,4 +27,15 @@ class LookUp {
     final nextYear = DateTime(currentDate.year + 1, 1, 1);
     return nextYear.difference(yearStart).inDays;
   }
+
+  static int daysLeftInYear() {
+    final days = totalDaysInYear() - elapsedDaysInYear();
+    return days;
+  }
+
+  static int dayPercent() {
+    final percent = (((elapsedDaysInYear()) / totalDaysInYear()) * 100).toInt();
+    print(percent);
+    return percent;
+  }
 }
