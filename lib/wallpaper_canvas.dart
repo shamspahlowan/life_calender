@@ -16,21 +16,21 @@ class WallpaperCanvas extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     // Background
     //const Color(0xFF1C1C1E)
-    final rect = Offset.zero & size;
-    canvas.drawRect(
-      Offset.zero & size,
-      Paint()..color = const Color(0xFF1C1C1E),
-    );
-    canvas.drawRect(
-      Offset.zero & size,
-      Paint()
-        ..shader = const RadialGradient(
-          center: Alignment.topLeft,
-          radius: 2,
-          colors: [Color.fromARGB(255, 50, 67, 90), Color(0x00000000)],
-          stops: [0.0, 1.0],
-        ).createShader(rect),
-    );
+    // final rect = Offset.zero & size;
+    // canvas.drawRect(
+    //   Offset.zero & size,
+    //   Paint()..color = const Color(0xFF1C1C1E),
+    // );
+    // canvas.drawRect(
+    //   Offset.zero & size,
+    //   Paint()
+    //     ..shader = const RadialGradient(
+    //       center: Alignment.topLeft,
+    //       radius: 2,
+    //       colors: [Color.fromARGB(255, 50, 67, 90), Color(0x00000000)],
+    //       stops: [0.0, 1.0],
+    //     ).createShader(rect),
+    // );
 
     // Geometry
     final verticalPadding = size.height * layout.verticalPaddingRatio;
@@ -72,7 +72,7 @@ class WallpaperCanvas extends CustomPainter {
       canvas.drawRRect(
         RRect.fromRectAndRadius(
           Rect.fromCircle(center: Offset(x, y), radius: radius),
-          Radius.circular(9),
+          Radius.circular(30),
         ),
         paint,
       );

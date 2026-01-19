@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'dart:ui' as ui;
 import 'dart:typed_data';
+import 'package:life_calender/custom_paints/background.dart';
 import 'package:life_calender/data/calender_grid_layout.dart';
 import 'package:life_calender/wallpaper_canvas.dart';
 import 'package:path_provider/path_provider.dart';
@@ -12,6 +13,7 @@ Future<Uint8List> renderWallpaper(
 ) async {
   final recorder = ui.PictureRecorder();
   final canvas = ui.Canvas(recorder);
+  Background().paint(canvas, size);
   WallpaperCanvas(accentColor: accentColor, layout: layout).paint(canvas, size);
   final picture = recorder.endRecording();
   final image = await picture.toImage(size.width.toInt(), size.height.toInt());
@@ -44,4 +46,3 @@ Future<File?> getSavedWallpaper({String name = 'wallpaper'}) async {
   final file = File('${dir.path}/$name.png');
   return await file.exists() ? file : null;
 }
-

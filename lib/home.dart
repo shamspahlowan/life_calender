@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:life_calender/custom_paints/background.dart';
 import 'package:life_calender/data/calender_grid_layout.dart';
 import 'package:life_calender/save_wallpaper.dart';
 import 'package:life_calender/services/accent_color.dart';
@@ -69,13 +70,30 @@ class _HomeState extends State<Home> {
                 borderRadius: BorderRadiusGeometry.circular(12),
                 child: AspectRatio(
                   aspectRatio: aspectRatio,
-                  child: CustomPaint(
-                    painter: WallpaperCanvas(
-                      accentColor: accentColor,
-                      layout: CalendarGridLayout.fromSize(
-                        MediaQuery.of(context).size,
+                  // child: CustomPaint(
+                  //   painter: WallpaperCanvas(
+                  //     accentColor: accentColor,
+                  //     layout: CalendarGridLayout.fromSize(
+                  //       MediaQuery.of(context).size,
+                  //     ),
+                  //   ),
+                  // ),
+                  child: Stack(
+                    children: [
+                      Positioned.fill(
+                        child: CustomPaint(painter: Background()),
                       ),
-                    ),
+                      Positioned.fill(
+                        child: CustomPaint(
+                          painter: WallpaperCanvas(
+                            accentColor: accentColor,
+                            layout: CalendarGridLayout.fromSize(
+                              MediaQuery.of(context).size,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),
