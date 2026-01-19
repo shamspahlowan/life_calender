@@ -68,7 +68,14 @@ class WallpaperCanvas extends CustomPainter {
         paint = futurePaint;
       }
 
-      canvas.drawCircle(Offset(x, y), radius, paint);
+      // canvas.drawCircle(Offset(x, y), radius, paint);
+      canvas.drawRRect(
+        RRect.fromRectAndRadius(
+          Rect.fromCircle(center: Offset(x, y), radius: radius),
+          Radius.circular(9),
+        ),
+        paint,
+      );
     }
 
     // Draw text
