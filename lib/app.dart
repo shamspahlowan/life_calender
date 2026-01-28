@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:life_calender/home.dart';
-import 'package:life_calender/temp.dart';
 
 class App extends StatefulWidget {
   const App({super.key});
