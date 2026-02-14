@@ -4,4 +4,3 @@ import 'package:life_calender/app.dart';
 void main() {
   runApp(const App());
 }
-  

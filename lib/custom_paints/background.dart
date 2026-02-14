@@ -3,27 +3,46 @@ import 'package:flutter/material.dart';
 class Background extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
-    // main solid background for base
-    final solidBackgroundRect = Offset.zero & size;
+    final rect = Offset.zero & size;
 
-    final solidBackgroundPaint = Paint()..color = const Color(0xFF292929);
+    // Base dark canvas.
+    canvas.drawRect(rect, Paint()..color = const Color(0xFF09090B));
 
-    canvas.drawRect(solidBackgroundRect, solidBackgroundPaint);
+    // Subtle cool glow similar to modern shadcn card backdrops.
+    canvas.drawRect(
+      rect,
+      Paint()
+        ..shader = const RadialGradient(
+          center: Alignment(-0.1, -0.9),
+          radius: 1.25,
+          colors: [Color(0x223B82F6), Color(0x00000000)],
+          stops: [0.0, 1.0],
+        ).createShader(rect),
+    );
 
-    final gradientPaint = Paint()
-      ..shader =
-          RadialGradient(
-            colors: [const Color(0xFF424A56), Colors.transparent],
-            center: Alignment.bottomCenter,
-            radius: 6,
-            focal: Alignment.topCenter,
-            focalRadius: 0.001,
-            stops: [0.0, 0.6],
-          ).createShader(
-            solidBackgroundRect,
-          ); // this rect has zero size and offset can be use to paint any color
+    // Neutral vertical tone for depth.
+    canvas.drawRect(
+      rect,
+      Paint()
+        ..shader = const LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [Color(0x1AF8FAFC), Color(0x0A0F172A), Color(0x22000000)],
+          stops: [0.0, 0.45, 1.0],
+        ).createShader(rect),
+    );
 
-    canvas.drawRect(solidBackgroundRect, gradientPaint);
+    // Soft vignette keeps attention toward the center.
+    canvas.drawRect(
+      rect,
+      Paint()
+        ..shader = const RadialGradient(
+          center: Alignment.center,
+          radius: 1.0,
+          colors: [Color(0x00000000), Color(0x66000000)],
+          stops: [0.62, 1.0],
+        ).createShader(rect),
+    );
   }
 
   @override

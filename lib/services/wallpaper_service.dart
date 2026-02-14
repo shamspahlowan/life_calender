@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 class WallpaperService {
@@ -11,7 +12,7 @@ class WallpaperService {
       });
       return result == true;
     } on PlatformException catch (e) {
-      print('Failed to set wallpaper: ${e.message}');
+      debugPrint('Failed to set wallpaper: ${e.message}');
       return false;
     }
   }
