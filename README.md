@@ -15,13 +15,38 @@ This Flutter app generates a beautiful wallpaper that displays every day of the 
 -  **Week Counter** — Displays weeks passed and weeks remaining in the year
 -  **One-Tap Wallpaper Set** — Save and set as wallpaper directly from the app
 
+
 ## Preview
 
-The wallpaper displays:
-- **White dots** — Days that have passed
-- **Orange dot** — Today (current day)  
-- **Gray dots** — Days remaining in the year
-- **Week summary** — Text showing weeks elapsed and weeks left
+### Wallpaper Preview
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="assets/lock_screen.jpeg" alt="Lock Screen Wallpaper" width="220" />
+      <br />
+      <sub>Lock Screen</sub>
+    </td>
+    <td align="center">
+      <img src="assets/home_screen.jpeg" alt="Home Screen Wallpaper" width="220" />
+      <br />
+      <sub>Home Screen</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="assets/app_home_ui.jpeg" alt="App Home UI" width="220" />
+      <br />
+      <sub>App Home UI</sub>
+    </td>
+    <td align="center">
+      <img src="assets/app_home_ui_2.jpeg" alt="App Home UI Variant" width="220" />
+      <br />
+      <sub>App Home UI Routine Wallpaper</sub>
+    </td>
+  </tr>
+</table>
+
 
 ## How It Works
 
@@ -69,24 +94,6 @@ The app uses a `CustomPainter` to render a grid of 364 dots (52 weeks × 7 days)
 2. Preview your life calendar wallpaper
 3. Tap **"Save Wallpaper"** to generate and set it as your device wallpaper
 
-## Project Structure
-
-```
-lib/
-├── main.dart                 # App entry point
-├── app.dart                  # App configuration
-├── home.dart                 # Main screen with preview & controls
-├── wallpaper_canvas.dart     # Custom painter for the calendar grid
-├── save_wallpaper.dart       # Wallpaper rendering & saving logic
-├── data/
-│   └── calender_grid_layout.dart  # Grid configuration
-├── models/
-│   ├── enums.dart
-│   └── look_up.dart          # Date calculations
-└── services/
-    ├── accent_color.dart     # Accent color management
-    └── wallpaper_service.dart # Native wallpaper setting
-```
 
 ## Platforms
 
@@ -97,10 +104,7 @@ lib/
 - `flutter` — UI framework
 - `path_provider` — File system access for saving wallpapers
 
-## License
-
-This project is open source and available for personal use.
-
----
 
 *Made with ❤️ by [shamspahlowan](https://github.com/shamspahlowan)*
+
+
