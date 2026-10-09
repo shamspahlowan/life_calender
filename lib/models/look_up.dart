@@ -35,7 +35,6 @@ class LookUp {
 
   static int dayPercent() {
     final percent = (((elapsedDaysInYear()) / totalDaysInYear()) * 100).toInt();
-    print(percent);
     return percent;
   }
 }

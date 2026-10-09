@@ -106,7 +106,6 @@ class _HomeState extends State<Home> {
           SizedBox(width: 10),
           ElevatedButton(
             onPressed: () async {
-              print(aspectRatio);
               final size = MediaQuery.of(context).size;
               final bytes = await renderWallpaper(
                 accentColor,
