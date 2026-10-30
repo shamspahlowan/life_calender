@@ -1,3 +1,22 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="dev.shozen.wallpaper_engine">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Optional so the app still installs on devices without live wallpapers. -->
+    <uses-feature
+        android:name="android.software.live_wallpaper"
+        android:required="false" />
+
+    <application>
+        <service
+            android:name=".service.ResonanceWallpaperService"
+            android:exported="true"
+            android:label="@string/wallpaper_engine_label"
+            android:permission="android.permission.BIND_WALLPAPER">
+            <intent-filter>
+                <action android:name="android.service.wallpaper.WallpaperService" />
+            </intent-filter>
+            <meta-data
+                android:name="android.service.wallpaper"
+                android:resource="@xml/wallpaper_engine_resonance" />
+        </service>
+    </application>
 </manifest>

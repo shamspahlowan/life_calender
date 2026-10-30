@@ -1,0 +1,5 @@
+<resources>
+    <!-- Prefixed so they never collide with the host app's resources. -->
+    <string name="wallpaper_engine_label">Resonance</string>
+    <string name="wallpaper_engine_description">Your year, one dot per day. Each dot glows with how the day felt.</string>
+</resources>
