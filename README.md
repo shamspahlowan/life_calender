@@ -83,11 +83,19 @@ The app uses a `CustomPainter` to render a grid of 364 dots (52 weeks × 7 days)
    flutter pub get
    ```
 
-4. Run the app (Android uses `dev` and `prod` flavors):
+4. Run the app (Android uses `dev` and `prod` flavors). In VS Code, pick **Resonance (dev)** or **Resonance (prod)** under Run and Debug. From a terminal:
    ```bash
    flutter run --flavor dev
    ```
    `dev` installs as `dev.shozen.resonance.dev` ("Resonance Dev") alongside the production `dev.shozen.resonance`.
+
+5. Run the tests:
+   ```bash
+   flutter test
+   (cd android && ./gradlew :wallpaper_engine:testDebugUnitTest)
+   ```
+
+Architecture decisions are recorded in [`docs/adr`](docs/adr/README.md).
 
 ## Usage
 
