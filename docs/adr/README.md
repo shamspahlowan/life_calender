@@ -1,7 +1,8 @@
 # Architecture decision records
 
 Short records of the decisions that shape Resonance: what we chose, why, and what it costs.
-New decisions get the next number; superseded ones stay, marked as such.
+New decisions get the next number; superseded ones stay, marked as such. Upcoming work lives in
+[`../ROADMAP.md`](../ROADMAP.md).
 
 | # | Decision | Status |
 |---|---|---|
