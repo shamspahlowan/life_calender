@@ -83,10 +83,11 @@ The app uses a `CustomPainter` to render a grid of 364 dots (52 weeks × 7 days)
    flutter pub get
    ```
 
-4. Run the app:
+4. Run the app (Android uses `dev` and `prod` flavors):
    ```bash
-   flutter run
+   flutter run --flavor dev
    ```
+   `dev` installs as `dev.shozen.resonance.dev` ("Resonance Dev") alongside the production `dev.shozen.resonance`.
 
 ## Usage
 

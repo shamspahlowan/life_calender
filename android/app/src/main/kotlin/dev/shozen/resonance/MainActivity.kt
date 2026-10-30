@@ -1,11 +1,4 @@
-// package com.example.life_calender
-
-// import io.flutter.embedding.android.FlutterActivity
-
-// class MainActivity : FlutterActivity()
-
-
-package com.example.life_calender
+package dev.shozen.resonance
 
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.FlutterEngine

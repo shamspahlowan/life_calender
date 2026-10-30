@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:life_calender/custom_paints/background.dart';
-import 'package:life_calender/data/calender_grid_layout.dart';
-import 'package:life_calender/models/look_up.dart';
-import 'package:life_calender/temp_widgets/temp_palette.dart';
-import 'package:life_calender/wallpaper_canvas.dart';
+import 'package:resonance/custom_paints/background.dart';
+import 'package:resonance/data/calender_grid_layout.dart';
+import 'package:resonance/models/look_up.dart';
+import 'package:resonance/temp_widgets/temp_palette.dart';
+import 'package:resonance/wallpaper_canvas.dart';
 
 class YearDotsPreview extends StatelessWidget {
   const YearDotsPreview({

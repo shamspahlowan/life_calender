@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.life_calender"
+    namespace = "dev.shozen.resonance"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
@@ -20,14 +20,27 @@ android {
     }
 
     defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId = "com.example.life_calender"
-        // You can update the following values to match your application needs.
-        // For more information, see: https://flutter.dev/to/review-gradle-config.
+        applicationId = "dev.shozen.resonance"
         minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
+    }
+
+    // dev installs side by side with prod (dev.shozen.resonance.dev).
+    // Run with `flutter run --flavor dev`; Dart reads the active flavor via `appFlavor`.
+    flavorDimensions += "env"
+    productFlavors {
+        create("dev") {
+            dimension = "env"
+            applicationIdSuffix = ".dev"
+            versionNameSuffix = "-dev"
+            resValue("string", "app_name", "Resonance Dev")
+        }
+        create("prod") {
+            dimension = "env"
+            resValue("string", "app_name", "Resonance")
+        }
     }
 
     buildTypes {

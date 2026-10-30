@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:life_calender/data/calender_grid_layout.dart';
-import 'package:life_calender/models/look_up.dart';
+import 'package:resonance/data/calender_grid_layout.dart';
+import 'package:resonance/models/look_up.dart';
 
 void paintCalendarDots({
   required Canvas canvas,

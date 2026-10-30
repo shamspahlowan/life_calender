@@ -1,9 +1,9 @@
 import 'dart:io';
 import 'dart:ui' as ui;
 import 'dart:typed_data';
-import 'package:life_calender/custom_paints/background.dart';
-import 'package:life_calender/data/calender_grid_layout.dart';
-import 'package:life_calender/wallpaper_canvas.dart';
+import 'package:resonance/custom_paints/background.dart';
+import 'package:resonance/data/calender_grid_layout.dart';
+import 'package:resonance/wallpaper_canvas.dart';
 import 'package:path_provider/path_provider.dart';
 
 Future<Uint8List> renderWallpaper(

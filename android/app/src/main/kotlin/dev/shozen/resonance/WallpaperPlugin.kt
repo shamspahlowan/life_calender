@@ -1,4 +1,4 @@
-package com.example.life_calender
+package dev.shozen.resonance
 
 import android.app.WallpaperManager
 import android.graphics.BitmapFactory

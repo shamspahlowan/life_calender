@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:life_calender/temp_widgets/temp_palette.dart';
+import 'package:resonance/temp_widgets/temp_palette.dart';
 
 class GoalPreview extends StatelessWidget {
   const GoalPreview({

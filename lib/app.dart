@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:life_calender/temp.dart';
+import 'package:resonance/temp.dart';
 
 class App extends StatefulWidget {
   const App({super.key});

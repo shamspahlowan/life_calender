@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:life_calender/custom_paints/background.dart';
-import 'package:life_calender/data/calender_grid_layout.dart';
-import 'package:life_calender/save_wallpaper.dart';
-import 'package:life_calender/services/accent_color.dart';
-import 'package:life_calender/services/wallpaper_service.dart';
-import 'package:life_calender/wallpaper_canvas.dart';
+import 'package:resonance/custom_paints/background.dart';
+import 'package:resonance/data/calender_grid_layout.dart';
+import 'package:resonance/save_wallpaper.dart';
+import 'package:resonance/services/accent_color.dart';
+import 'package:resonance/services/wallpaper_service.dart';
+import 'package:resonance/wallpaper_canvas.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});

@@ -3,14 +3,14 @@ import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:life_calender/data/calender_grid_layout.dart';
-import 'package:life_calender/models/look_up.dart';
-import 'package:life_calender/save_wallpaper.dart' show saveWallpaperToStorage;
-import 'package:life_calender/services/wallpaper_service.dart';
-import 'package:life_calender/temp_widgets/goal_preview.dart';
-import 'package:life_calender/temp_widgets/routine_preview.dart';
-import 'package:life_calender/temp_widgets/temp_palette.dart';
-import 'package:life_calender/temp_widgets/year_dots_preview.dart';
+import 'package:resonance/data/calender_grid_layout.dart';
+import 'package:resonance/models/look_up.dart';
+import 'package:resonance/save_wallpaper.dart' show saveWallpaperToStorage;
+import 'package:resonance/services/wallpaper_service.dart';
+import 'package:resonance/temp_widgets/goal_preview.dart';
+import 'package:resonance/temp_widgets/routine_preview.dart';
+import 'package:resonance/temp_widgets/temp_palette.dart';
+import 'package:resonance/temp_widgets/year_dots_preview.dart';
 
 class Temp extends StatefulWidget {
   const Temp({super.key});
