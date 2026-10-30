@@ -10,6 +10,8 @@ dependencies:
   flutter:
     sdk: flutter
   path_provider: ^2.1.5
+  wallpaper_engine:
+    path: packages/wallpaper_engine
 
 dev_dependencies:
   flutter_test:
