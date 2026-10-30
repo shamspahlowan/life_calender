@@ -33,6 +33,8 @@ class _EngineDebugPageState extends ConsumerState<EngineDebugPage> {
   void didChangeDependencies() {
     super.didChangeDependencies();
     final screen = MediaQuery.sizeOf(context);
+    // Android reports a 0x0 window on the very first frame; wait for the real size.
+    if (screen.isEmpty) return;
     final heightPx = (_previewWidthPx * screen.height / screen.width).round();
     _controller.setPreviewSize(_previewWidthPx, heightPx);
   }
@@ -57,6 +59,7 @@ class _EngineDebugPageState extends ConsumerState<EngineDebugPage> {
 
     final state = ref.watch(engineDebugControllerProvider);
     final screen = MediaQuery.sizeOf(context);
+    if (screen.isEmpty) return const Scaffold();
     final rated = state.snapshot.ratings.length;
 
     return Scaffold(
