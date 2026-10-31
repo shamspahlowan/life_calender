@@ -10,7 +10,6 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_riverpod: ^3.3.2
-  path_provider: ^2.1.5
   wallpaper_engine:
     path: packages/wallpaper_engine
 
