@@ -1,6 +1,6 @@
 # Resonance roadmap
 
-_Last updated 2026-11-01. Keep this file current as work lands; record big decisions as ADRs in [`docs/adr`](adr/README.md)._
+_Last updated 2026-10-31. Keep this file current as work lands; record big decisions as ADRs in [`docs/adr`](adr/README.md)._
 
 ## Product in one line
 A quiet, monochrome lock screen made from your days. Every evening you rate the day 1–5; the live
@@ -20,14 +20,18 @@ Android first. Positioning: calm and reflective, not "memento mori" guilt; class
 - ADRs 0001–0003.
 
 ## Week 2 — data and check-ins (target Nov 2–15)
-1. **Delete the old prototype:** `lib/temp.dart`, `home.dart`, `save_wallpaper.dart`,
+Items 1–4 done (`e645049..ae5fd9f`): `very_good_analysis` is on with an 80-column limit and
+`public_member_api_docs` off; the merged dev manifest now asks only for `POST_NOTIFICATIONS`
+(plus `INTERNET` from the debug manifest).
+
+1. ~~**Delete the old prototype:** `lib/temp.dart`, `home.dart`, `save_wallpaper.dart`,
    `wallpaper_canvas.dart`, `custom_paints/`, `data/`, `models/`, `services/`, `temp_widgets/`;
    old Kotlin `WallpaperPlugin.kt`, `AccentColorPlugin.kt` and their registration in
-   `MainActivity`; the `path_provider` dependency.
-2. **Manifest cleanup:** drop unused permissions (`READ_MEDIA_IMAGES`, `READ/WRITE_EXTERNAL_STORAGE`,
-   `SCHEDULE_EXACT_ALARM`, `RECEIVE_BOOT_COMPLETED`, `SET_WALLPAPER`); add `POST_NOTIFICATIONS`.
-3. **Remove unused platforms** (`linux/`, `macos/`, `windows/`, `web/`); keep `ios/` for later.
-4. **Stricter lints:** adopt `very_good_analysis` once the old code is gone.
+   `MainActivity`; the `path_provider` dependency.~~
+2. ~~**Manifest cleanup:** drop unused permissions (`READ_MEDIA_IMAGES`, `READ/WRITE_EXTERNAL_STORAGE`,
+   `SCHEDULE_EXACT_ALARM`, `RECEIVE_BOOT_COMPLETED`, `SET_WALLPAPER`); add `POST_NOTIFICATIONS`.~~
+3. ~~**Remove unused platforms** (`linux/`, `macos/`, `windows/`, `web/`); keep `ios/` for later.~~
+4. ~~**Stricter lints:** adopt `very_good_analysis` once the old code is gone.~~
 5. **Check-in feature** (`lib/features/checkin/{domain,data,presentation}`):
    - `CheckIn` entity (date, rating 1–5, optional word), `CheckInRepository` interface, drift
      implementation with migrations, use cases `RecordCheckIn` / `WatchYearCheckIns`.
