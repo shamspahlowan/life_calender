@@ -1,7 +1,7 @@
 /// The outcome of an operation that can fail in an expected way.
 ///
-/// Failures are values, not exceptions, so callers must handle them and the UI never shows a raw
-/// exception message.
+/// Failures are values, not exceptions, so callers must handle them and the UI
+/// never shows a raw exception message.
 sealed class Result<T, F> {
   const Result();
 

@@ -13,7 +13,7 @@ void main() {
 
     test('leap years have 366 days and Dec 31 is the last', () {
       expect(DateTime(2028).daysInYear, 366);
-      expect(DateTime(2028, 3, 1).dayOfYear, 61);
+      expect(DateTime(2028, 3).dayOfYear, 61);
       expect(DateTime(2028, 12, 31).dayOfYear, 366);
     });
 

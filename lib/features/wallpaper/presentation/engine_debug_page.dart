@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:resonance/features/wallpaper/presentation/engine_debug_controller.dart';
@@ -22,7 +24,8 @@ class _EngineDebugPageState extends ConsumerState<EngineDebugPage> {
   @override
   void initState() {
     super.initState();
-    // Coming back from the system picker is the only signal that the wallpaper may have changed.
+    // Coming back from the system picker is the only signal that the wallpaper
+    // may have changed.
     _lifecycle = AppLifecycleListener(onResume: _controller.refreshActive);
     WidgetsBinding.instance.addPostFrameCallback(
       (_) => _controller.refreshActive(),
@@ -33,10 +36,10 @@ class _EngineDebugPageState extends ConsumerState<EngineDebugPage> {
   void didChangeDependencies() {
     super.didChangeDependencies();
     final screen = MediaQuery.sizeOf(context);
-    // Android reports a 0x0 window on the very first frame; wait for the real size.
+    // Android reports a 0x0 window on the first frame; wait for the real size.
     if (screen.isEmpty) return;
     final heightPx = (_previewWidthPx * screen.height / screen.width).round();
-    _controller.setPreviewSize(_previewWidthPx, heightPx);
+    unawaited(_controller.setPreviewSize(_previewWidthPx, heightPx));
   }
 
   @override
@@ -96,7 +99,8 @@ class _EngineDebugPageState extends ConsumerState<EngineDebugPage> {
             ),
             const SizedBox(height: 16),
             Text(
-              '$rated days rated  ·  wallpaper ${state.isActive ? 'active' : 'not active'}',
+              '$rated days rated  ·  '
+              'wallpaper ${state.isActive ? 'active' : 'not active'}',
               textAlign: TextAlign.center,
               style: const TextStyle(
                 fontFamily: 'monospace',

@@ -21,7 +21,8 @@ final class EngineDebugState {
   final Uint8List? preview;
   final bool isActive;
 
-  /// One-off feedback for the user (for example a failure); cleared on the next action.
+  /// One-off feedback for the user (for example a failure); cleared on the next
+  /// action.
   final String? message;
 
   EngineDebugState copyWith({
@@ -37,8 +38,9 @@ final class EngineDebugState {
   );
 }
 
-/// Drives the temporary engine test screen: fakes check-in data, pushes it to the engine and
-/// renders the native preview. Replaced by the real check-in flow in week 2.
+/// Drives the temporary engine test screen: fakes check-in data, pushes it to
+/// the engine and renders the native preview. Replaced by the real check-in
+/// flow in week 2.
 final class EngineDebugController extends Notifier<EngineDebugState> {
   ({int width, int height})? _previewSize;
 

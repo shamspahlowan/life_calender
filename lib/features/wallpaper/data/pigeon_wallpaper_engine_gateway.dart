@@ -7,8 +7,8 @@ import 'package:wallpaper_engine/wallpaper_engine.dart';
 
 /// [WallpaperEngineGateway] backed by the native engine's Pigeon API.
 ///
-/// Adapts domain types to wire types and platform errors to [EngineFailure], so nothing above the
-/// data layer imports Pigeon code.
+/// Adapts domain types to wire types and platform errors to [EngineFailure], so
+/// nothing above the data layer imports Pigeon code.
 final class PigeonWallpaperEngineGateway implements WallpaperEngineGateway {
   PigeonWallpaperEngineGateway([WallpaperEngineHostApi? api])
     : _api = api ?? WallpaperEngineHostApi();

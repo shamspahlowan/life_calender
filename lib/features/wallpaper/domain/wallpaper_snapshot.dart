@@ -2,10 +2,12 @@ import 'package:flutter/foundation.dart';
 
 enum WallpaperStyle { yearMosaic }
 
-/// What the wallpaper engine needs to draw: the year's ratings and the chosen style.
+/// What the wallpaper engine needs to draw: the year's ratings and the chosen
+/// style.
 ///
-/// It's a projection of the user's data, rebuilt and pushed to the engine whenever that data
-/// changes. "Today" is not part of it: the engine reads its own clock when it draws.
+/// It's a projection of the user's data, rebuilt and pushed to the engine
+/// whenever that data changes. "Today" is not part of it: the engine reads its
+/// own clock when it draws.
 @immutable
 final class WallpaperSnapshot {
   const WallpaperSnapshot({

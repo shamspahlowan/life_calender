@@ -26,8 +26,8 @@ final class UnknownEngineFailure extends EngineFailure {
 
 /// The app's only way to talk to the native wallpaper engine.
 ///
-/// Domain and UI code depend on this interface; the Pigeon-backed implementation lives in the data
-/// layer, and tests substitute a fake.
+/// Domain and UI code depend on this interface; the Pigeon-backed
+/// implementation lives in the data layer, and tests substitute a fake.
 abstract interface class WallpaperEngineGateway {
   /// Stores [snapshot] and redraws the live wallpaper if it's active.
   Future<Result<void, EngineFailure>> push(WallpaperSnapshot snapshot);

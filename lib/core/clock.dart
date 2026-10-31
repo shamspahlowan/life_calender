@@ -1,4 +1,8 @@
-/// Source of the current time. Injected instead of calling [DateTime.now] so date logic is testable.
+/// Source of the current time. Injected instead of calling [DateTime.now] so
+/// date logic is testable.
+// A named interface rather than a function typedef, so it can grow (a time
+// zone, say) without changing every injection site.
+// ignore: one_member_abstracts
 abstract interface class Clock {
   DateTime now();
 }
@@ -19,7 +23,8 @@ final class FixedClock implements Clock {
 }
 
 extension CalendarDay on DateTime {
-  /// 1-based day of the year. Computed in UTC so daylight-saving shifts can't drop or repeat a day.
+  /// 1-based day of the year. Computed in UTC so daylight-saving shifts can't
+  /// drop or repeat a day.
   int get dayOfYear =>
       DateTime.utc(year, month, day).difference(DateTime.utc(year)).inDays + 1;
 
